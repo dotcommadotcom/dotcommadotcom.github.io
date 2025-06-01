@@ -1,15 +1,25 @@
 ---
-const today = new Date();
+const now = new Date();
+const cst = new Date(
+  now.toLocaleString("en-US", { timeZone: "America/Chicago" })
+);
+
+const year = cst.getFullYear();
+const month = String(cst.getMonth() + 1).padStart(2, "0");
+const day = String(cst.getDate()).padStart(2, "0");
+const formattedDate = `${year}-${month}-${day}`;
+
+const footerText = "jiwoo's offline thoughts last published on:";
 ---
 
 <footer>
-  &copy; {today.getFullYear()} jiwoo. All rights reserved.
+  {footerText}
+  {formattedDate}.
 </footer>
 <style>
   footer {
-    padding: 2em 1em 6em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    padding: 1em 1em 1em 1em;
     color: rgb(var(--gray));
-    text-align: center;
+    text-align: left;
   }
 </style>
