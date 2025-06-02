@@ -1,45 +1,21 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-  <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">all</HeaderLink>
-      <HeaderLink href="/about">ramblings</HeaderLink>
-    </div>
-  </nav>
+  <h2><a href="/">{SITE_TITLE}</a></h2>
 </header>
 <style>
   header {
     margin: 0;
-    padding: 0 1em;
+    padding: 1em 1em;
+    background-color: pink;
   }
 
   h2 {
     margin: 0;
     font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav a {
-    padding: 1em 0.5em;
-    color: var(--black);
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
+    font-style: italic;
+    font-weight: 300;
   }
 </style>
